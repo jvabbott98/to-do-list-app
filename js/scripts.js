@@ -4,7 +4,7 @@ function newItem() {
   //1. Adding a new item to the list of items;
     let li = $('<li></li>');
     let inputValue = $('#input').val();
-    li.append('inputValue');
+    li.append(inputValue);
 
     if (inputValue === '') {
       alert('You must write something!');
@@ -19,10 +19,9 @@ function newItem() {
       li.toggleClass('strike');
     }
 
-    li.on('dbclick', crossOut);
-  	// li.on("dblclick", function crossOut() {
-    //   li.toggleClass("strike");
-    // });
+  	li.on("dblclick", function crossOut() {
+      li.toggleClass("strike");
+    });
 
   //3 Adding the delete button "X":
       let crossOutButton = $('<crossOutButton></crossOutButton>');
